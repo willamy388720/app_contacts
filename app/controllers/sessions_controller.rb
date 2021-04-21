@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to user_path(current_user) if user_signed?
+    redirect_to user_path(current_user) if user_signed_in?
   end
 
   def create
@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:session][:password])
       sign_in(user)
-      redirect_to user_path(user)
+      redirect_to contacts_path
     else
       flash.now[:danger] = 'Email ou senha invalidos'
       render :new

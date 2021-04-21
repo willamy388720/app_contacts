@@ -1,5 +1,12 @@
-<h1>New Contact</h1>
+<div class="row mt-5">
+  <div class="col-12">
+    <h1>Adicionar Novo Contato</h1>
+  </div>
 
-<%= render 'form', contact: @contact %>
-
-<%= link_to 'Back', contacts_path %>
+  <div class="col-md-6 offset-md-3 col-12">
+    <%= form_for @contact do |f| %>
+    <%= render 'fields', f: f %>
+    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

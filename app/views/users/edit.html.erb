@@ -1,12 +1,12 @@
   <div class="row mt-5">
     <div class="col-12">
-      <h1>Cadastra-se<h1>
+      <h1>Editar Dados<h1>
     </div>
 
     <div class="col-md-6 offset-md-3 col-12">
-      <%= form_for @user do |f| %>
+      <%= form_for current_user do |f| %>
       <%= render "fields", f: f %>
-      <%= f.submit 'Cadastrar',class:"btn btn-primary" %>
+      <%= f.submit 'Salvar',class:"btn btn-primary" %>
       <% end %>
     </div>
   </div>
